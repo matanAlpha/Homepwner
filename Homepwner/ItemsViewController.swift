@@ -39,24 +39,29 @@ class ItemsViewController: UITableViewController {
 //        let cell = UITableViewCell(style: .value1, reuseIdentifier: "UITableViewCell")
 
         // Get a new or recycled cell
-        let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell",
-                                                 for: indexPath)
+        
         // Set the text on the cell with the description of the item
         // that is at the nth index of items, where n = row this cell
         // will appear in on the tableview
         
         if (itemStore.allItems.count == indexPath.row) {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "LastUITableViewCell",
+                                                     for: indexPath)
             cell.textLabel?.text = "No more items!"
-            cell.detailTextLabel?.text = ""
+            //cell.detailTextLabel?.text = ""
+            return cell
         }else{
            let  item = itemStore.allItems[indexPath.row]
+            let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell",
+                                                     for: indexPath)
             cell.textLabel?.text = item.name
             cell.detailTextLabel?.text = "$\(item.valueInDollars)"
+            return cell
         }
-        
+        //LastUITableViewCell
         
        
-        return cell
+        
     }
 }
 
