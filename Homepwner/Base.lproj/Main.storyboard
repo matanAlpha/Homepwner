@@ -46,6 +46,23 @@
                                 <constraint firstItem="aBo-RW-THA" firstAttribute="centerY" secondItem="Liv-dI-a9T" secondAttribute="centerY" id="q9J-y0-Bk0"/>
                             </constraints>
                         </view>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="4Ur-T0-Ppx">
+                            <rect key="frame" x="0.0" y="132" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No more items!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yUc-GG-63P">
+                                    <rect key="frame" x="129" y="12" width="117" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="yUc-GG-63P" firstAttribute="centerX" secondItem="4Ur-T0-Ppx" secondAttribute="centerX" id="A4U-My-yEq"/>
+                                <constraint firstItem="yUc-GG-63P" firstAttribute="centerY" secondItem="4Ur-T0-Ppx" secondAttribute="centerY" id="Ilg-ZE-Ne6"/>
+                            </constraints>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UITableViewCell" textLabel="7hy-mi-jbl" detailTextLabel="mcC-XA-QFV" style="IBUITableViewCellStyleValue1" id="byF-QP-Lnp">
                                 <rect key="frame" x="0.0" y="88" width="375" height="44"/>
