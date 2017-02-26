@@ -18,11 +18,19 @@ class ItemStore {
         for _ in 0..<5 {
             createItem()
         }
+        itemsBySections.append(itemsLessThan50)
+        itemsBySections.append(itemsMoreThan50)
     }
     
     @discardableResult func createItem() -> Item {
         let newItem = Item(random: true)
         allItems.append(newItem)
+        if(newItem.valueInDollars<50)
+        {
+            itemsLessThan50.append(newItem)
+        }else{
+            itemsMoreThan50.append(newItem)
+        }
         return newItem
     }
 }

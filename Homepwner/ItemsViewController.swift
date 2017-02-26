@@ -28,9 +28,22 @@ class ItemsViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
     override func tableView(_ tableView: UITableView,
                             numberOfRowsInSection section: Int) -> Int {
-        return itemStore.allItems.count
+        var ret = 0
+        if(section == 0)
+        {
+            ret = itemStore.itemsBySections[0].count
+        }else
+        {
+            ret = itemStore.itemsBySections[1].count
+        }
+        
+        return ret
     }
 
     override func tableView(_ tableView: UITableView,
@@ -44,7 +57,9 @@ class ItemsViewController: UITableViewController {
         // Set the text on the cell with the description of the item
         // that is at the nth index of items, where n = row this cell
         // will appear in on the tableview
-        let item = itemStore.allItems[indexPath.row]
+        
+        
+        let item = itemStore.itemsBySections[indexPath.section][indexPath.row]
         cell.textLabel?.text = item.name
         cell.detailTextLabel?.text = "$\(item.valueInDollars)"
         return cell
