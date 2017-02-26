@@ -29,6 +29,27 @@ class ItemsViewController: UITableViewController {
     }
 
     
+    override func tableView(_ tableView: UITableView,
+                            commit editingStyle: UITableViewCellEditingStyle,
+                            forRowAt indexPath: IndexPath) {
+        // If the table view is asking to commit a delete command...
+        if editingStyle == .delete {
+            let item = itemStore.allItems[indexPath.row]
+            // Remove the item from the store
+            itemStore.removeItem(item)
+            // Also remove that row from the table view with an animation
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+    }
+    
+    
+    override func tableView(_ tableView: UITableView,
+                            moveRowAt sourceIndexPath: IndexPath,
+                            // Update the model
+        to destinationIndexPath: IndexPath) {
+        itemStore.moveItem(from: sourceIndexPath.row, to: destinationIndexPath.row)
+    }
+    
     @IBAction func addNewItem(_ sender: UIButton) {
         // Make a new index path for the 0th section, last row
         // Create a new item and add it to the store
