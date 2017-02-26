@@ -10,7 +10,9 @@ import UIKit
 
 class ItemStore {
     var allItems = [Item]()
-    
+    var itemsLessThan50 = [Item]()
+    var itemsMoreThan50 = [Item]()
+    var itemsBySections = [[Item]]()
     
     init() {
         for _ in 0..<5 {
