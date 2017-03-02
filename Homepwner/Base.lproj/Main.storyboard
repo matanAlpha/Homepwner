@@ -69,7 +69,7 @@
                                 <rect key="frame" x="0.0" y="88" width="375" height="65"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="byF-QP-Lnp" id="KEo-OM-Bvr">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hef-ds-uIP">
@@ -105,6 +105,7 @@
                                     <outlet property="nameLabel" destination="Hef-ds-uIP" id="w6q-cB-LME"/>
                                     <outlet property="serialNumberLabel" destination="ufn-rq-Cm5" id="e27-rN-aOM"/>
                                     <outlet property="valueLabel" destination="qpi-Ya-7hI" id="9G8-XH-sb6"/>
+                                    <segue destination="igh-0P-QS5" kind="show" identifier="showItem" id="kTM-Rv-vTg"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -118,10 +119,10 @@
             </objects>
             <point key="canvasLocation" x="842" y="126"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="bGQ-eB-xLR">
             <objects>
-                <viewController id="igh-0P-QS5" sceneMemberID="viewController">
+                <viewController id="igh-0P-QS5" customClass="DetailViewController" customModule="Homepwner" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="beh-k3-Oeg"/>
                         <viewControllerLayoutGuide type="bottom" id="KuM-kq-zbP"/>
@@ -205,6 +206,12 @@
                             <constraint firstItem="v3e-z5-cWs" firstAttribute="leading" secondItem="SbY-Qt-c6n" secondAttribute="leadingMargin" id="vaO-vW-vEJ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="dateLabel" destination="Qfd-gr-3oB" id="N3b-27-Q7G"/>
+                        <outlet property="nameField" destination="wc5-Ho-WHp" id="skD-iP-PyB"/>
+                        <outlet property="serialNumberField" destination="68h-il-fgJ" id="3Kw-vT-dok"/>
+                        <outlet property="valueField" destination="WU0-Zg-Lp3" id="vdm-Hm-ka7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qy2-Aa-OmZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
