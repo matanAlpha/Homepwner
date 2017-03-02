@@ -38,7 +38,13 @@ class DetailViewController: UIViewController , UITextFieldDelegate{
         return formatter
     }()
     
-    var item: Item!
+    var item: Item! {
+        didSet {
+            navigationItem.title = item.name
+        }    
+    }
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         nameField.text = item.name
