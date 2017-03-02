@@ -45,6 +45,17 @@ class DetailViewController: UIViewController , UITextFieldDelegate{
     }
     
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // If the triggered segue is the "showItem" segue
+        switch segue.identifier {
+        case "updateDateSegue"?:
+                let detailViewController    = segue.destination as! UpdateDateViewController
+                detailViewController.item = self.item
+             default:
+                preconditionFailure("Unexpected segue identifier.")
+        }
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         nameField.text = item.name
