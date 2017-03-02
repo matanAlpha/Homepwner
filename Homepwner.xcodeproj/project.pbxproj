@@ -16,6 +16,7 @@
 		84225D201E6282DD0078EC45 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84225D1F1E6282DD0078EC45 /* Item.swift */; };
 		84225D221E6283AF0078EC45 /* ItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84225D211E6283AF0078EC45 /* ItemStore.swift */; };
 		843B47961E68150F00B470E6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B47951E68150F00B470E6 /* DetailViewController.swift */; };
+		843B47981E68548E00B470E6 /* FirstReponderBorderUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B47971E68548E00B470E6 /* FirstReponderBorderUITextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		84225D1F1E6282DD0078EC45 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		84225D211E6283AF0078EC45 /* ItemStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemStore.swift; sourceTree = "<group>"; };
 		843B47951E68150F00B470E6 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		843B47971E68548E00B470E6 /* FirstReponderBorderUITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstReponderBorderUITextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				84225D211E6283AF0078EC45 /* ItemStore.swift */,
 				841F0CB21E67CB8100EA93CA /* ItemCell.swift */,
 				843B47951E68150F00B470E6 /* DetailViewController.swift */,
+				843B47971E68548E00B470E6 /* FirstReponderBorderUITextField.swift */,
 			);
 			path = Homepwner;
 			sourceTree = "<group>";
@@ -159,6 +162,7 @@
 				84225D0F1E6281EE0078EC45 /* ItemsViewController.swift in Sources */,
 				84225D201E6282DD0078EC45 /* Item.swift in Sources */,
 				84225D221E6283AF0078EC45 /* ItemStore.swift in Sources */,
+				843B47981E68548E00B470E6 /* FirstReponderBorderUITextField.swift in Sources */,
 				843B47961E68150F00B470E6 /* DetailViewController.swift in Sources */,
 				84225D0D1E6281EE0078EC45 /* AppDelegate.swift in Sources */,
 				841F0CB31E67CB8100EA93CA /* ItemCell.swift in Sources */,
