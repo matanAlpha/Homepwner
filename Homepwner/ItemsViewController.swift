@@ -12,6 +12,10 @@ class ItemsViewController: UITableViewController {
 
     var itemStore: ItemStore!
     
+    
+
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -21,7 +25,12 @@ class ItemsViewController: UITableViewController {
         let insets = UIEdgeInsets(top: statusBarHeight, left: 0, bottom: 0, right: 0)
         tableView.contentInset = insets
         tableView.scrollIndicatorInsets = insets
+//        tableView.rowHeight = 65
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 65
     }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -114,14 +123,19 @@ class ItemsViewController: UITableViewController {
 //        let cell = UITableViewCell(style: .value1, reuseIdentifier: "UITableViewCell")
 
         // Get a new or recycled cell
-        let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell",
-                                                 for: indexPath)
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell",
+//                                                 for: indexPath)
+
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell",
+                                                 for: indexPath) as! ItemCell
+        
         // Set the text on the cell with the description of the item
         // that is at the nth index of items, where n = row this cell
         // will appear in on the tableview
         let item = itemStore.allItems[indexPath.row]
-        cell.textLabel?.text = item.name
-        cell.detailTextLabel?.text = "$\(item.valueInDollars)"
+        cell.nameLabel?.text = item.name
+        cell.valueLabel?.text = "$\(item.valueInDollars)"
+        cell.serialNumberLabel?.text = item.serialNumber
         return cell
     }
 }
