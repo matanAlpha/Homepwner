@@ -13,6 +13,11 @@ class ItemsViewController: UITableViewController  {
     var itemStore: ItemStore!
     
     
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        navigationItem.leftBarButtonItem = editButtonItem
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
@@ -26,14 +31,15 @@ class ItemsViewController: UITableViewController  {
         // Do any additional setup after loading the view, typically from a nib.
         
         // Get the height of the status bar
-        let statusBarHeight = UIApplication.shared.statusBarFrame.height
-        let insets = UIEdgeInsets(top: statusBarHeight, left: 0, bottom: 0, right: 0)
-        tableView.contentInset = insets
-        tableView.scrollIndicatorInsets = insets
+//        let statusBarHeight = UIApplication.shared.statusBarFrame.height
+//        let insets = UIEdgeInsets(top: statusBarHeight, left: 0, bottom: 0, right: 0)
+//        tableView.contentInset = insets
+//        tableView.scrollIndicatorInsets = insets
 //        tableView.rowHeight = 65
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 65
-    }
+        
+            }
     
     
 
@@ -101,33 +107,46 @@ class ItemsViewController: UITableViewController  {
         itemStore.moveItem(from: sourceIndexPath.row, to: destinationIndexPath.row)
     }
     
-    @IBAction func addNewItem(_ sender: UIButton) {
-        // Make a new index path for the 0th section, last row
-        // Create a new item and add it to the store
-        let newItem = itemStore.createItem()
-        // Figure out where that item is in the array
-        if let index = itemStore.allItems.index(of: newItem) {
-            let indexPath = IndexPath(row: index, section: 0)
-            // Insert this new row into the table
-            tableView.insertRows(at: [indexPath], with: .automatic)
-        }
+//    @IBAction func addNewItem(_ sender: UIButton) {
+//        // Make a new index path for the 0th section, last row
+//        // Create a new item and add it to the store
+//        let newItem = itemStore.createItem()
+//        // Figure out where that item is in the array
+//        if let index = itemStore.allItems.index(of: newItem) {
+//            let indexPath = IndexPath(row: index, section: 0)
+//            // Insert this new row into the table
+//            tableView.insertRows(at: [indexPath], with: .automatic)
+//        }
+//    
+//    }
     
+    @IBAction func addNewItem(_ sender: UIBarButtonItem) {
+                // Make a new index path for the 0th section, last row
+                // Create a new item and add it to the store
+                let newItem = itemStore.createItem()
+                // Figure out where that item is in the array
+                if let index = itemStore.allItems.index(of: newItem) {
+                    let indexPath = IndexPath(row: index, section: 0)
+                    // Insert this new row into the table
+                    tableView.insertRows(at: [indexPath], with: .automatic)
+                }
+
     }
     
-    @IBAction func toggleEditingMode(_ sender: UIButton) {
-        // If you are currently in editing mode...
-        if isEditing {
-            // Change text of button to inform user of state
-            sender.setTitle("Edit", for: .normal)
-            // Turn off editing mode
-            setEditing(false, animated: true)
-        } else {
-            // Change text of button to inform user of state
-            sender.setTitle("Done", for: .normal)
-            // Enter editing mode
-            setEditing(true, animated: true)
-        }
-    }
+//    @IBAction func toggleEditingMode(_ sender: UIButton) {
+//        // If you are currently in editing mode...
+//        if isEditing {
+//            // Change text of button to inform user of state
+//            sender.setTitle("Edit", for: .normal)
+//            // Turn off editing mode
+//            setEditing(false, animated: true)
+//        } else {
+//            // Change text of button to inform user of state
+//            sender.setTitle("Done", for: .normal)
+//            // Enter editing mode
+//            setEditing(true, animated: true)
+//        }
+//    }
     
     override func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
         return "Remove" //or customize for each indexPath
