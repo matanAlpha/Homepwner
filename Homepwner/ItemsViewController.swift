@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ItemsViewController: UITableViewController {
+class ItemsViewController: UITableViewController  {
 
     var itemStore: ItemStore!
     
@@ -18,6 +18,8 @@ class ItemsViewController: UITableViewController {
         tableView.reloadData()
     }
     
+    
+ 
     
     override func viewDidLoad() {
         super.viewDidLoad()
